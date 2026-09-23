@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Image from "next/image"
 import { ImageGallery } from "@/components/ImageGallery"
+import { ShieldCheck, Leaf, Users, PiggyBank, ChefHat, Warehouse, UtensilsCrossed, Settings, CheckCircle2 } from "lucide-react"
 
 const galleryImages = [
   "https://qualitycook.com.br/wp-content/uploads/2020/12/010-1.jpg",
@@ -13,89 +14,132 @@ const galleryImages = [
   "https://qualitycook.com.br/wp-content/uploads/2020/12/FOTO-01-1.jpg",
 ]
 
+const facilities = [
+  { icon: Warehouse, title: "Estoque Amplo", desc: "Recebimento de mercadorias, armazenagem e distribuição rigorosa de todos os insumos." },
+  { icon: ChefHat, title: "Confeitaria Própria", desc: "Área exclusiva para o preparo diário das nossas deliciosas sobremesas caseiras." },
+  { icon: CheckCircle2, title: "Área de Check-list", desc: "Espaço pré-determinado para montagem, conferência e organização do seu cardápio." },
+  { icon: Settings, title: "Equipamentos Modernos", desc: "Coifas, chapas, caldeiras, fornos e câmaras de resfriamento de última geração." },
+  { icon: UtensilsCrossed, title: "Centro de Higienização", desc: "Área isolada para lavagem e esterilização de todas as louças e utensílios." },
+]
+
 export default function Sobre() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
       
-      <div className="bg-muted py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">A Quality Cook</h1>
-          <div className="w-20 h-1.5 bg-primary rounded-full"></div>
+      {/* Hero Section Específica para Sobre */}
+      <div className="relative h-[40vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://qualitycook.com.br/wp-content/uploads/2020/12/FOTO-19_-1.jpg"
+            alt="Sede Quality Cook"
+            fill
+            className="object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-900/80 to-zinc-900/40 mix-blend-multiply" />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
+          <span className="text-primary font-bold tracking-widest uppercase mb-4 block text-sm">História e Estrutura</span>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 drop-shadow-lg">A Quality Cook</h1>
+          <div className="w-24 h-2 bg-primary rounded-full mb-6 shadow-lg"></div>
+          <p className="text-xl max-w-2xl text-gray-200">
+            Mais de duas décadas entregando refeições corporativas com sabor de comida caseira, qualidade e segurança alimentar.
+          </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+      {/* Nossa Essência - Alternância de Imagem e Texto */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight">Conheça a nossa Empresa</h2>
+            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold mb-2">
+              Sede Própria de 1000m²
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">O Sabor de uma Empresa Familiar</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A QUALITY COOK possui sede própria e conta com uma área de mais de 1000 metros quadrados para realizar o preparo das refeições.
+              O grande diferencial da <strong className="text-foreground">QUALITY COOK</strong> está em nossa essência: oferecer um serviço altamente personalizado, atendendo de forma próxima às necessidades de cada cliente. 
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              O grande diferencial da QUALITY COOK esta em sua essência em oferecer um serviço personalizado, atendendo as necessidades especificas de cada cliente. Trabalhando em parceria com os melhores Fornecedores de Insumos e qualificando sua Mão de Obra, a fim de garantir a satisfação máxima dos colaboradores.
+              Trabalhamos em parceria apenas com os melhores fornecedores de insumos do mercado, investindo constantemente na qualificação da nossa Mão de Obra. O resultado? Uma alimentação equilibrada e nutritiva todos os dias.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              O resultado deste trabalho é uma alimentação equilibrada, nutritiva e com sabor de comida caseira. Contratar os serviços de refeições coletivas é como ter restaurante particular dentro da sua Empresa.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-10">Nosso espaço conta com:</h3>
-            <ul className="space-y-3 mt-4">
-              {[
-                "Estoque para realizar recebimento de mercadorias, armazenagem e distribuição de todos os insumos;",
-                "Confeitaria para preparo de sobremesas caseiras;",
-                "Área de Check list, conferência na distribuição de alimentos, onde cada cliente terá seu espaço pré-determinado para preparo e organização de todos os itens que compõem seu cardápio;",
-                "Equipamentos modernos e funcionais como coifas, chapas, freezers, caldeiras, fornos e câmaras de resfriamento;",
-                "Área de lavagem, onde são efetuadas as higienizações de todas as louças e utensílios que foram utilizados na preparação dos alimentos;"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start text-foreground font-medium">
-                  <div className="mr-3 mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-          <div className="grid gap-6">
-            <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-xl">
-              <Image 
-                src="https://qualitycook.com.br/wp-content/uploads/2020/12/09-QualityCook-equipe01_1_-1-1.jpg"
-                alt="Equipe Quality Cook"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-xl">
-              <Image 
-                src="https://qualitycook.com.br/wp-content/uploads/2020/12/FOTO-19_-1.jpg"
-                alt="Sede Quality Cook"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+          <div className="relative h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-background transform lg:-rotate-2 transition-transform hover:rotate-0 duration-500">
+            <Image 
+              src="https://qualitycook.com.br/wp-content/uploads/2020/12/09-QualityCook-equipe01_1_-1-1.jpg"
+              alt="Equipe Quality Cook"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
+      </div>
 
-        <div className="mt-24">
-          <h3 className="text-3xl font-bold mb-8 text-center">Nossa Estrutura em Imagens</h3>
-          <ImageGallery images={galleryImages} />
-        </div>
-
-        <div className="mt-24">
-          <h3 className="text-3xl font-bold mb-8 text-center">Nossos Diferenciais</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Qualidade", text: "Todos os alimentos e cardápios são elaborados e inspecionados diariamente por Nutricionistas especializados em refeições coletivas." },
-              { title: "Saúde e Segurança Alimentar", text: "Nosso serviço de hortifrúti é completo, recebemos todos os dias frutas, legumes e verduras dos melhores fornecedores." },
-              { title: "Mão de Obra Especializada", text: "Contamos com um verdadeiro 'time' para realizar o preparo os alimentos, como Cozinheiros, Ajudantes de Cozinha, Estoquistas e Nutricionistas." },
-              { title: "Custo Benefício", text: "As refeições coletivas são a melhor solução para alimentação corporativa, com ótimo custo benefício no comparativo a restaurantes comuns." },
-            ].map((diff, idx) => (
-              <div key={idx} className="bg-muted/50 p-6 rounded-xl border border-border">
-                <h4 className="text-xl font-bold mb-3 text-primary">{diff.title}</h4>
-                <p className="text-muted-foreground">{diff.text}</p>
+      {/* Nossa Estrutura Física - Grid com Ícones (Substituindo texto em bloco) */}
+      <div className="bg-muted py-24 border-y border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Nosso Espaço Conta Com</h2>
+            <p className="text-lg text-muted-foreground">
+              Infraestrutura completa projetada para garantir segurança e qualidade em altíssimo volume.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facilities.map((fac, idx) => (
+              <div key={idx} className="bg-background p-8 rounded-2xl shadow-sm border border-border/50 hover:border-primary/50 transition-colors group">
+                <div className="w-14 h-14 bg-primary/10 text-primary flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <fac.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{fac.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{fac.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Galeria */}
+      <div className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-center">Estrutura em Imagens</h3>
+          <div className="w-20 h-1.5 bg-primary rounded-full mx-auto mt-6"></div>
+        </div>
+        <ImageGallery images={galleryImages} />
+      </div>
+
+      {/* Diferenciais (Cards Vibrantes) */}
+      <div className="bg-primary/5 py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold">Por que escolher a Quality Cook?</h3>
+            <p className="text-lg text-muted-foreground mt-4">Nossos pilares de excelência</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-background p-8 rounded-3xl shadow-lg border-t-4 border-t-blue-500 hover:-translate-y-2 transition-transform">
+              <ShieldCheck className="w-12 h-12 text-blue-500 mb-6" />
+              <h4 className="text-xl font-bold mb-4">Qualidade Inspecionada</h4>
+              <p className="text-muted-foreground">Alimentos e cardápios elaborados e inspecionados diariamente por Nutricionistas especializados.</p>
+            </div>
+            
+            <div className="bg-background p-8 rounded-3xl shadow-lg border-t-4 border-t-green-500 hover:-translate-y-2 transition-transform">
+              <Leaf className="w-12 h-12 text-green-500 mb-6" />
+              <h4 className="text-xl font-bold mb-4">Segurança Alimentar</h4>
+              <p className="text-muted-foreground">Serviço de hortifrúti completo. Recebemos diariamente frutas e legumes dos melhores fornecedores.</p>
+            </div>
+
+            <div className="bg-background p-8 rounded-3xl shadow-lg border-t-4 border-t-purple-500 hover:-translate-y-2 transition-transform">
+              <Users className="w-12 h-12 text-purple-500 mb-6" />
+              <h4 className="text-xl font-bold mb-4">Time de Especialistas</h4>
+              <p className="text-muted-foreground">Um verdadeiro esquadrão: Cozinheiros, Ajudantes, Estoquistas e Nutricionistas dedicados à sua empresa.</p>
+            </div>
+
+            <div className="bg-background p-8 rounded-3xl shadow-lg border-t-4 border-t-orange-500 hover:-translate-y-2 transition-transform">
+              <PiggyBank className="w-12 h-12 text-orange-500 mb-6" />
+              <h4 className="text-xl font-bold mb-4">Custo Benefício</h4>
+              <p className="text-muted-foreground">A melhor solução para alimentação corporativa, superando restaurantes comuns e vale-refeições.</p>
+            </div>
           </div>
         </div>
       </div>
