@@ -30,7 +30,7 @@ export default function Hero() {
           QUALITY COOK
         </h1>
 
-        <p className="text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl font-medium animate-in slide-in-from-bottom-5 duration-1000 delay-100">
+        <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl font-normal animate-in slide-in-from-bottom-5 duration-1000 delay-100">
           Excelência em refeições coletivas empresariais. Levamos o sabor da
           comida caseira para dentro da sua empresa.
         </p>
