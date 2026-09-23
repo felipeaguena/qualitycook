@@ -1,6 +1,17 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Image from "next/image"
+import { ImageGallery } from "@/components/ImageGallery"
+
+const galleryImages = [
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/010-1.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/009-1.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/008-1.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/QualityCook-720x480-thumb3-1.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/FOTO-17.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/013-QualityCook-self01_1_-1.jpg",
+  "https://qualitycook.com.br/wp-content/uploads/2020/12/FOTO-01-1.jpg",
+]
 
 export default function Sobre() {
   return (
@@ -66,7 +77,12 @@ export default function Sobre() {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-24">
+          <h3 className="text-3xl font-bold mb-8 text-center">Nossa Estrutura em Imagens</h3>
+          <ImageGallery images={galleryImages} />
+        </div>
+
+        <div className="mt-24">
           <h3 className="text-3xl font-bold mb-8 text-center">Nossos Diferenciais</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
