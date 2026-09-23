@@ -22,11 +22,11 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center max-w-5xl">
-        <span className="text-white font-black tracking-[0.2em] uppercase mb-6 text-sm md:text-base animate-in slide-in-from-bottom-5 duration-700 bg-primary px-6 py-2 rounded-full shadow-[0_0_20px_rgba(107,0,62,0.5)] border border-primary/50">
+        <span className="text-white font-medium tracking-[0.2em] uppercase mb-6 text-sm md:text-base animate-in slide-in-from-bottom-5 duration-700 bg-primary px-6 py-2 rounded-full shadow-[0_0_20px_rgba(107,0,62,0.5)] border border-primary/50">
           25 Anos de Experiência
         </span>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 animate-in slide-in-from-bottom-5 duration-1000 text-white">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8 animate-in slide-in-from-bottom-5 duration-1000 text-white">
           QUALITY COOK
         </h1>
 
