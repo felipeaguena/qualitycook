@@ -27,10 +27,10 @@ export default function Hero() {
           QUALITY COOK
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 animate-in slide-in-from-bottom-5 duration-1000 delay-200">
-          <Link href="#about" className={cn(buttonVariants({ size: "lg" }), "text-base h-12 px-8")}>
+          <Link href="/sobre-a-quality-cook" className={cn(buttonVariants({ size: "lg" }), "text-base h-12 px-8")}>
             Sobre a Quality Cook
           </Link>
-          <Link href="#services" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "text-base h-12 px-8 bg-transparent text-white border-white hover:bg-white hover:text-black")}>
+          <Link href="/servicos" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "text-base h-12 px-8 bg-transparent text-white border-white hover:bg-white hover:text-black")}>
             Nossos Serviços
           </Link>
         </div>

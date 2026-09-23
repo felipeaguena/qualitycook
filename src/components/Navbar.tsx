@@ -7,9 +7,9 @@ import Image from "next/image"
 
 const routes = [
   { href: "/", label: "Início" },
-  { href: "#about", label: "A Quality Cook" },
-  { href: "#services", label: "Serviços" },
-  { href: "#contact", label: "Contato" },
+  { href: "/sobre-a-quality-cook", label: "A Quality Cook" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/contato", label: "Contato" },
 ]
 
 export default function Navbar() {
